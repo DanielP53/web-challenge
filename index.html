@@ -18,6 +18,31 @@
       margin: auto;
       padding: 2rem;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .text {
+      overflow: hidden;
+    }
+
+    .active {
+      width: 0;
+      font-size: 40px;
+      color: red;
+      text-transform: uppercase;
+      font-weight: 700;
+      animation: netflix 3s forwards;
+    }
+
+    @keyframes netflix {
+      from {
+        width: 40px;
+      }
+      to {
+        width: 100%;
+      }
     }
 
   </style>
@@ -26,10 +51,15 @@
 <body>
 
   <main class="appContainer">
+    <p class="text">Netflix</p>
+    <button onclick="addStyles()">change text style</button>
   </main>
   <!-- App JS -->
   <script>
-
+    function addStyles() {
+      const text = document.querySelector('.text');
+      text.classList.toggle('active');
+    }
   </script>
 
 </body>
